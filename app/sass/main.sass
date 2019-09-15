@@ -2,12 +2,8 @@
 @import fonts
 @import libs
 
-::placeholder
-	color: #666
-
-::selection
-	background-color: $accent
-	color: #fff
+img 
+	display: block
 
 input, textarea
 	outline: none
@@ -18,23 +14,30 @@ input, textarea
 
 body
 	font-size: 16px
+	font-weight: 600
 	min-width: 320px
 	position: relative
 	line-height: 1.65
-	font-family: 'Roboto', sans-serif
+	font-family: 'Monsterrat_norm', sans-serif
 	overflow-x: hidden
-	color: $text
+	color: $dark-blue
+	background-color: $grey-bg
 
 // Custom Sass / Remove before use
-
-.container
-	max-width: 700px
-	padding:
-		right: $gutter/2
-		left: $gutter/2
-	margin:
-		left: auto
-		right: auto
+.button
+	height: 32px
+	border-radius: 16px
+	border: 2px solid #e3e8f0
+	padding: 5px 18px 11px
+	color: $dark-blue
+	font-size: 11px
+	letter-spacing: 1.1px
+	text-transform: uppercase
+	font-weight: 600
+	background-color: #fff
+	transition: all 0.4s ease
+	&:hover
+		background-color: #f0f2f7
 
 .img-responsive
 	display: block
@@ -58,5 +61,378 @@ body
 .example-img
 	width: 100%
 
-.parent // Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/
-	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+.header-bg
+	background-color: #fff
+	border-bottom: 1px solid #f0f2f7
+.header
+	padding-top: 30px
+	padding-bottom: 30px
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.nav
+	display: flex
+	font-size: 14px
+	font-weight: 400
+	&-link
+		margin-right: 30px
+		text-decoration: none
+		color: $dark-blue
+		&:last-child
+			margin-right: 0
+
+.header-right
+	display: flex
+	.header-cart
+		display: flex
+		align-items: center
+		width: 90px
+		letter-spacing: 0.55px
+		margin-right: 30px
+		&__icon
+			margin-right: 8px
+		&__title
+			margin-right: 5px
+			color: $dark-blue
+			font-size: 11px
+			font-weight: 600
+			text-transform: uppercase
+		&__counter
+			width: 24px
+			height: 24px
+			border-radius: 12px
+			background-color: #e3e8f0
+			color: $dark-blue
+			font-size: 11px
+			font-weight: 600
+			text-transform: uppercase
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-shrink: 0
+	.header-sign.button
+		height: 32px
+		border-radius: 16px
+		border: 2px solid #e3e8f0
+		padding: 5px 18px 11px
+		color: $dark-blue
+		font-size: 11px
+		letter-spacing: 1.1px
+		text-transform: uppercase
+		font-weight: 600
+		background-color: #fff
+
+.navigation-bg
+	background-color: #fff
+	
+.header__bottom
+	display: flex
+	justify-content: space-between 
+	font-size: 11px
+	height: 55px
+	// padding: 20px 0 
+	text-transform: uppercase
+	margin-bottom: 30px
+	background-color: #fff
+	.header__bottom-left
+		display: flex
+		justify-content: space-between
+		width: 85%
+		.header__bottom-nav
+			display: flex
+			justify-content: space-between
+			align-items: center	
+			.header__bottom-nav__link
+				margin-right: 25px
+				color: #b9bed1
+				&:last-child
+					margin-right: 0
+				&:hover
+					color: $dark-blue
+					text-decoration: none
+		.header__bottom__support
+			display: flex
+			align-items: center
+			padding-right: 30px
+			border-right: 1px solid #f0f2f7
+			a
+				color: #b9bed1
+				&:hover
+					color: $dark-blue
+					text-decoration: none
+	&-right
+		display: flex
+		align-items: center
+.header__search
+	display: flex
+	position: relative
+	margin-left: 20px
+	font-size: 14px
+	color: #a1a7bd
+	margin-right: 10px
+	height: 55px
+	img
+		position: absolute
+		top: 22px
+		// padding: 5px 5px 0 0 
+	.search
+		border: none
+		padding-left: 20px
+		display: block
+
+
+
+.product-card
+	background-color: #fff
+	border-radius: $borderRadius
+	padding-bottom: 45px
+	text-align: center
+	margin-bottom: 30px
+	height: 380px
+	&__img
+		height: 250px
+		margin-bottom: 10px
+		display: flex
+		align-items: center
+		justify-content: center
+		img 
+			max-width: 100%
+			height: auto
+	&__title
+		font-size: 16px
+		line-height: 20px
+		margin-bottom: 10px
+	&__color
+		font-size: 12px
+		text-transform: uppercase
+		margin-bottom: 15px
+		letter-spacing: 1px
+		color: $product-color
+	&__price
+		font-size: 14px
+		color: $dark-blue
+	.prodact-card-content
+		padding-right: 20px 
+		padding-left: 20px 
+
+.product-card-big
+	background-color: #fff
+	border-radius: $borderRadius
+	margin-bottom: 30px
+	height: 380px
+	&__img
+		height: 305px
+		margin-bottom: 15px
+		position: relative
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		border-radius: $borderRadius
+	.prodact-card-big-content
+		padding-right: 20px 
+		padding-left: 25px 
+		display: flex
+		justify-content: space-between
+	&__title
+		font-size: 16px
+		line-height: 20px
+		margin-bottom: 7px
+	&__color
+		font-size: 12px
+		text-transform: uppercase
+		margin-bottom: 15px
+		letter-spacing: 1px
+		color: $product-color
+	&__price
+		font-size: 14px
+		color: $dark-blue
+		position: absolute
+		top: 20px
+		left: 20px
+		height: 24px
+		background-color: $black
+		color: #fff
+		font-size: 12px
+		text-transform: uppercase
+		letter-spacing: 1.2px
+		padding: 2px 8px 
+		border-radius: 4px
+	.button-group
+		display: flex
+		&__specs
+			border-radius: 17px 0 0 17px
+			border: 2px solid #f0f2f7
+			width: 110px
+		&__bay
+			border-radius: 0 17px 17px 0
+			border: 2px solid #f0f2f7
+			border-left: none
+			width: 110px
+
+.product-card-bottom
+	background-color: #fff
+	margin-bottom: 30px
+	height: 380px
+	border-radius: $borderRadius
+	.product-card-bottom__img
+		border-radius: $borderRadius
+		margin-bottom: 15px
+		height: inherit
+		position: relative
+		background-repeat: no-repeat
+		background-position: 100% 60%
+		background-size: cover
+		.product-card-bottom-content
+			padding-right: 20px 
+			padding-left: 25px 
+			display: flex
+			flex-direction: column
+			text-align: center
+			padding-top: 35px
+	&__title
+		font-size: 16px
+		line-height: 20px
+		margin-bottom: 7px
+		color: #1c1e23
+	&__price
+		color: #1c1e23
+		font-size: 14px
+		opacity: 0.5
+
+.sort
+	display: flex
+	justify-content: space-between
+	font-size: 11px
+	text-transform: uppercase
+	background-color: #fff
+	border-radius: $borderRadius
+	margin: 30px 0
+	height: 60px
+	&__left
+		color: $blue-gray
+		display: flex
+		justify-content: space-between
+		border-right: 1px solid #f0f2f7
+		width: 20%
+		align-items: center
+		padding-right: 10px
+		padding-left: 10px
+		&-list
+			color: $dark-blue
+			position: relative
+			margin-bottom: 0
+			text-align: center
+			display: flex
+			&:hover
+				cursor: pointer 
+				background-color: $product-color
+				.sort__left-display
+					display: block 
+					z-index: 10
+			img
+				display: block
+				margin-left: 5px
+		&-display
+			padding-left: 0
+			display: none
+			list-style: none 
+			position: absolute
+			padding-top: 17px
+			li
+				width: 91px
+				display: block
+				background-color: $product-color
+				&:hover
+					background-color: $blue-gray
+
+.sort__center
+	color: $blue-gray
+	display: flex
+	justify-content: space-between
+	align-items: center
+	border-right: 1px solid #f0f2f7
+	width: 60%
+	padding-right: 30px
+	padding-left: 10px
+	input.first
+		width: 150px
+		height: 32px
+		border-radius: 16px
+		border: 2px solid #e3e8f0
+		padding-left: 10px
+		color: $dark-blue
+		font-size: 11px
+		letter-spacing: 1.1px
+		text-transform: uppercase
+		font-weight: 600
+		background-color: #fff
+		transition: all 0.4s ease
+		&:hover
+			background-color: #f0f2f7
+	input.two, .three
+		width: 70px
+		height: 32px
+		border-radius: 16px
+		border: 2px solid #e3e8f0
+		padding-left: 10px
+		color: $dark-blue
+		font-size: 11px
+		letter-spacing: 1.1px
+		text-transform: uppercase
+		font-weight: 600
+		background-color: #fff
+		transition: all 0.4s ease
+		&:hover
+			background-color: #f0f2f7
+	&-icon
+		display: flex
+		text-transform: none
+		color: $dark-blue
+		font-size: 13px
+		margin-left: 20px
+	&-icon>div
+		display: flex
+		justify-content: center
+		align-items: center
+		background-color: $green-accent
+		border-radius: 50%
+		width: 20px
+		height: 20px
+		margin-right: 5px
+
+
+.sort__right
+	color: $blue-gray
+	display: flex
+	justify-content: space-between
+	align-items: center
+	width: 20%
+	padding-right: 10px
+	padding-left: 10px
+	&-lang
+		color: $dark-blue
+		position: relative
+		margin-bottom: 0
+		text-align: center
+		display: flex
+		&:hover
+			cursor: pointer 
+			background-color: $product-color
+			.sort__right-display
+				display: block 
+		img 
+			margin-left: 5px
+			display: block
+		.sort__right-display
+			padding-left: 0
+			display: none
+			list-style: none 
+			position: absolute
+			padding-top: 18px
+			li 
+				width: 42px
+				display: block
+				background-color: $product-color
+				&:hover
+					background-color: $blue-gray
